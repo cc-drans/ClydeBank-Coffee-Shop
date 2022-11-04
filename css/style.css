@@ -62,7 +62,7 @@ img { border-style: none; }
 /* Header */
 
 header { 
-    background: sienna; 
+    background-image: linear-gradient(sienna, chocolate); 
     padding: 10px;
 }
 
@@ -80,7 +80,9 @@ header {
     vertical-align: middle;
 }
 
-nav { background: #266d82; }
+nav { 
+    background-image: linear-gradient(#266d82, #042039); 
+}
 
 nav li a { 
     color: white;
@@ -102,10 +104,27 @@ nav li a {
     color: black;
 }
 
+#coffeehouse {
+    background-image: url("https://otherfiles-cbm.s3-us-west-2.amazonaws.com/CoffeeShopImage.jpg");
+    background-size: cover;
+    width: 100%;
+    height: 250px;
+    animation-name: background-pan;
+    animation-duration: 10s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+   
+  @keyframes background-pan {
+    from { background-position: left; }
+    to { background-position: right; }
+  }
+
 /* Footer */
 
 footer {
-    background: #4a3d48;
+    background-image: linear-gradient(#4a3d48, #987776);
     color: #fff;
     padding: 10px;  
     height: 100px;
@@ -220,4 +239,46 @@ footer a { color: cornsilk; }
     padding: 0;
     border: none;
     background: url('images/sprite.png') -320px 0;
+}
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 750px) {
+
+    /* Reduce padding in main element */
+    main { padding: 5px; }
+
+    /* Fix nav bar */
+    nav { height: 35px; }
+    nav ul { padding-top: 7px; }
+    nav li { display: inline; }
+    nav li a { color: white; }
+
+    /* Add extra spacing between menu items */
+    .menu-item { 
+        padding-top: 10px; 
+        padding-bottom: 10px; 
+    }
+    .title-item h2 { font-size: 1em; }
+
+    /* Fix add on item */
+    .menu-item.additional-items h2 {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 100%;
+        float: none;
+    }
+
+    /* Reduce footer header size and add some padding */
+    footer h2 { 
+        font-size: 1.4em;
+        padding-top: 3px; 
+        padding-bottom: 3px;
+    }
+
+    /* Reduce size of footer text to avoid awkward wrapping */
+    footer li { font-size: 0.85em; }
+
+    /* Add padding to bottom of footer */
+    footer { padding-bottom: 5px; }
 }
